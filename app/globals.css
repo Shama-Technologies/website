@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  padding: none;
+  margin: none;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .maxContainer {
+    @apply max-w-[1440px] mx-auto;
+  }
+
+  .sections {
+    @apply px-5 md:px-16;
+  }
+
+  .bg {
+    background: linear-gradient(
+      238deg,
+      #483fb2 1.47%,
+      #191830 19.55%,
+      #0c0b15 50.74%,
+      #19182f 82.72%,
+      #483fb2 94.74%
+    );
+  }
+
+  .para1 {
+    @apply text-base  font-normal md:leading-10 md:text-[28px];
+  }
+
+  .textDefault {
+    @apply text-[28px] leading-9;
+  }
+
+  .textMedium {
+    @apply text-[28px] leading-9 font-medium;
+  }
+
+  .header3 {
+    @apply text-xl lg:text-[40px] leading-9 font-bold;
+  }
+
+  .input {
+    @apply bg-white py-3 px-3 text-black/50 focus:text-black rounded-md h-full w-full;
+  }
+
+  .inputGradient {
+    @apply rounded-lg bg-gradient-to-r from-[#483FB2] from-0% to-[#1F1B4C]/65 to-100%;
+  }
+
+  label {
+    @apply text-base relative font-medium text-black;
+  }
 }
