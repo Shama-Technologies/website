@@ -10,7 +10,7 @@ interface Iprops {
   answer: string;
 }
 
-const QA = ({ question, answer }: Iprops) => {
+const HomeQA = ({ question, answer }: Iprops) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -24,7 +24,9 @@ const QA = ({ question, answer }: Iprops) => {
         onClick={() => setOpen((prev) => !prev)}
         className="cursor-pointer transition-all duration-300 flex justify-between items-start md:items-center w-full"
       >
-        <h5 className="text-xs md:text-xl font-medium">{question}</h5>
+        <h5 className="text-xs md:text-xl text-black font-medium">
+          {question}
+        </h5>
         {open ? (
           <div className="bg-[#483FB2] px-2 py-2 rounded-full">
             <IoIosArrowDown
@@ -61,4 +63,4 @@ const QA = ({ question, answer }: Iprops) => {
   );
 };
 
-export default QA;
+export default HomeQA;

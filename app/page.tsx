@@ -1,7 +1,8 @@
-import Feature from "@/components/home/Feature";
-import GetStarted from "@/components/home/GetStarted";
-import PartnerHome from "@/components/home/PartnerHome";
-import WhyShama from "@/components/home/WhyShama";
+import Feature from "../components/home/Feature";
+import GetStarted from "../components/home/GetStarted";
+import HomeFAQ from "../components/home/HomeFAQ";
+import PartnerHome from "../components/home/PartnerHome";
+import WhyShama from "../components/home/WhyShama";
 import Image from "next/image";
 import React from "react";
 
@@ -108,6 +109,7 @@ const page = () => {
       <div className="sections">
         <GetStarted />
       </div>
+      <HomeFAQ />
       {/* <Footer /> */}
     </main>
   );

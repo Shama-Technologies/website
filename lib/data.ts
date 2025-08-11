@@ -210,7 +210,7 @@ export const BecomeAmbassador = [
   "Be passionate about creating innovation and showcasing creativity",
 ];
 
-export const QuestionAnswer = [
+export const HomeQuestionAnswer = [
   {
     question: "What is Shama all about?",
     answer:
@@ -249,6 +249,82 @@ export const QuestionAnswer = [
   },
 ];
 
+export const AmbassadorQuestionAnswer = [
+  {
+    question: "Why Shama Ambassadors Program?",
+    answer: [
+      "Make a Lasting impact",
+      "Build a Stronger Community",
+      "Promote Growth and influence",
+    ],
+  },
+  {
+    question: "Who is eligible to apply?",
+    answer: [
+      "Any student from a Nigerian tertiary institution who meets the following criteria:",
+      "Must be born again and active in the Christian faith",
+      "Must be involved in campus Fellowship or church activities",
+      "Must have a social media presence",
+      "Must have strong communication skills",
+      "Must have positive attitude and Team spirit",
+      "Passion for kingdom content",
+      "Endorsement from a church leader",
+      "Be ready to engage with believers worldwide",
+      "Be passionate about Creating innovation and showcasing creativity",
+    ],
+  },
+  {
+    question: "What Activities are expected of each Ambassador?",
+    answer: [
+      "As an Ambassador for Shama group, the following activities are required:",
+      "Promote the Shama App",
+      "Organize Events and Workshops",
+      "Participate in content sharing and Engagement",
+      "Use feedback collection",
+      "Lead Discussions and Study Groups",
+      "Represent Shama at Events",
+      "Collaborate with Other Ambassadors",
+      "Advocate for Shama's Mission",
+    ],
+  },
+  {
+    question: "What are the benefits of being a shama ambassador?",
+    answer: [
+      "Being a shama ambassador offers the following Benefits:",
+      "Exclusive Access to premium content",
+      "Leadership Development",
+      "Networking opportunities",
+      "Recognition and Rewards",
+      "Personalized support",
+      "Impactful Ministry Tools",
+      "Event participation",
+      "Career Advancement",
+      "Internship and Training opportunities",
+    ],
+  },
+  {
+    question: "I am a freshman, can I still apply?",
+    answer: "Yes, students across all levels are welcome to join the program",
+  },
+  {
+    question:
+      "If I have information or inquiries about the program, who do I reach?",
+    answer: [
+      "All ambassadors would be given access to ambassador's community on slack",
+      "You can Also send an email to technologiesshama@gmail.com for inquiries",
+    ],
+  },
+  {
+    question: "As an ambassador, can I opt out of the Program?",
+    answer: [
+      "Yes ambassadors who Voluntarily choose to leave the program must do the following:",
+      "Notify the program coordinator at least 30 days in advance via a formal email or written notice",
+      "Providing feedbacks on your experience and reasons is required but not mandatory",
+      "Certificate of Appreciation will be awarded to ambassadors who leave voluntarily and in good standing",
+    ],
+  },
+];
+
 export const FooterLinks = [
   {
     header: "Company",
@@ -278,7 +354,7 @@ export const FooterLinks = [
     header: "Partner",
     links: [
       { name: "", link: "#" },
-      { name: "Donate", link: "#Donate" },
+      { name: "Donate", link: "https://paystack.shop/pay/-91i0l6by7" },
       { name: "Ambassador", link: "/ambassador" },
     ],
   },

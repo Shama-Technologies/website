@@ -21,7 +21,7 @@ const PartnerType = () => {
               >
                 <div className="relative">
                   <div
-                    className="relative w-[300px]  h-[300px] bg-cover bg-center rounded-lg"
+                    className="relative w-[300px]  h-[300px] bg-cover bg-center "
                     style={{ backgroundImage: `url(${partner.img})` }}
                   >
                     {/* <Image

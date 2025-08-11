@@ -38,7 +38,7 @@ const Donation = () => {
           type="button"
           className="flex py-3 md:py-4 px-9 md:px-[50px] text-white font-bold text-xl rounded-lg  bg-[#483FB2] mt-10"
         >
-          Donate now
+          <a href="https://paystack.shop/pay/-91i0l6by7">Donate now</a>
         </button>
       </div>
     </section>

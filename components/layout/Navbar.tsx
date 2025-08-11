@@ -16,7 +16,7 @@ const Navbar = memo(() => {
         <div className=" absolute -right-10  bg-[#483FB2] z-10  blur-[100px]  md:blur-[80px] h-[250px] w-[70px] "></div>
 
         <div className="max-md:w-[100px] max-md:h-[28px]">
-          <Link href="/">
+          <Link href="/" className="outline-none">
             <Image
               src="/icons/shamaLogo.svg"
               alt="Shama Logo"
@@ -46,14 +46,20 @@ const Navbar = memo(() => {
             })}
           </ul>
 
-          <button
-            type="button"
-            className="text-base font-medium px-4 z-30 py-[10px] text-white rounded-lg bg-[#483FB2]"
-          >
-            <Link href="/ambassador" prefetch={true}>
+          <Link href="/ambassador" prefetch={true}>
+            <button
+              type="button"
+              className="text-base cursor-pointer font-medium px-4 z-30 py-[10px] text-white rounded-lg bg-[#483FB2]"
+            >
+              {" "}
               Ambassadors
-            </Link>
-          </button>
+            </button>
+          </Link>
+
+          {/* <button
+            type="button"
+            className="text-base curson-pointer font-medium px-4 z-30 py-[10px] text-white rounded-lg bg-[#483FB2]"
+          ></button> */}
         </div>
         <MobileNav openNav={openNav} setOpenNav={setOpenNav} />
         <button

@@ -1,18 +1,16 @@
 "use client";
 import * as React from "react";
-// import Button from "@mui/material/Button";
+
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-// import DialogContentText from "@mui/material/DialogContentText";
+
 import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { FaStarOfLife } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
-// import { FaStar } from "react-icons/fa";
-// import { POST } from "@/app/api/contact/route";
 
 interface IAmbassador {
   name: string;
@@ -29,6 +27,8 @@ interface IAmbassador {
 interface ILabel {
   label: string;
 }
+
+// const service = process.envc
 
 export default function AmbassadorForm({ label }: ILabel) {
   const [open, setOpen] = React.useState(false);
@@ -58,9 +58,6 @@ export default function AmbassadorForm({ label }: ILabel) {
     reset,
     formState: { errors },
   } = useForm<IAmbassador>();
-
-  // const scriptURL =
-  //   "https://script.google.com/macros/s/AKfycbz1fHRN1lEXXKQ1sg2IT30of3GJAJRPhEMcu6_GCgmpbPiIOt0u40nb0ibMtCkky9J2/exec";
 
   const sendEmail = async (data: IAmbassador) => {
     if (!form.current) return;
@@ -125,10 +122,9 @@ export default function AmbassadorForm({ label }: ILabel) {
       ).toString(),
     });
 
-    alert("Form submitted successfully!");
-
     if (res.ok) {
       setIsSubmitting(false);
+      alert("Form submitted successfully!");
     }
 
     // setIsSubmitting(false);
@@ -140,7 +136,7 @@ export default function AmbassadorForm({ label }: ILabel) {
       <button
         onClick={handleClickOpen}
         type="button"
-        className="flex py-3 md:py-4 px-9 md:px-[50px] text-white font-bold text-xl rounded-lg  bg-[#483FB2] mt-10"
+        className="flex py-3 cursor-pointer md:py-4 px-9 md:px-[50px] text-white font-bold text-xl rounded-lg  bg-[#483FB2] mt-10"
       >
         {label}
       </button>
@@ -403,7 +399,7 @@ export default function AmbassadorForm({ label }: ILabel) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 disabled:bg-blue-400 disabled:cursor-not-allowed"
+                  className="w-full bg-blue-600 cursor-pointer text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 disabled:bg-blue-400 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
@@ -411,7 +407,7 @@ export default function AmbassadorForm({ label }: ILabel) {
                   onClick={handleClose}
                   type="button"
                   disabled={isSubmitting}
-                  className="py-[14px] px-[94px] text-base font-bold rounded-lg md:mt-5 flex text-[#483FB2] w-fit mx-auto bg-white border border-[#483FB2] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="py-[14px] px-[94px] cursor-pointer text-base font-bold rounded-lg md:mt-5 flex text-[#483FB2] w-fit mx-auto bg-white border border-[#483FB2] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Cancel
                 </button>

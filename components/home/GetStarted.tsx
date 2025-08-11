@@ -3,8 +3,8 @@ import React from "react";
 
 const GetStarted = () => {
   return (
-    <section className="bg-[#483FB2]  flex max-md:flex-col justify-between rounded-3xl  mb-10 text-white px-10 pt-10">
-      <div className="max-md:text-center pb-10">
+    <section className="bg-[#483FB2]  flex max-md:flex-col justify-between rounded-3xl  mb-10 text-white md:px-10 pt-10">
+      <div className="max-md:text-center flex flex-col max-md:items-center pb-10">
         <h3 className="text-base leading-6 md:text-2xl">
           Amplify your message, <span>reach more souls</span>
         </h3>

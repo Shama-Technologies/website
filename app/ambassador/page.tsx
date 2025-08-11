@@ -1,13 +1,14 @@
-import Faq from "@/components/ambassador/Faq";
 import Ambassador from "../../components/ambassador/Ambassador";
 
 import React from "react";
-import AmbassadorForm from "@/components/forms/AmbassadorForm";
+
+import AmbassadorFAQ from "../../components/ambassador/AmbassadorFAQ";
+import AmbassadorForm from "../../components/forms/AmbassadorForm";
 
 const page = () => {
   return (
     <section>
-      <section className="relative grid place-content-center py-[70px] md:py-[100px] text-white bg-[url('/images/ambassadorHeroBg.svg')] bg-no-repeat object-fill lg:bg-cover bg-center h-screen">
+      <section className="relative grid place-content-center py-[70px] md:py-[100px] text-white bg-[url('/images/ambassadorHeroBg.png')] bg-no-repeat object-fill lg:bg-cover bg-center h-screen">
         {/* Overlay */}
         <div className="absolute left-0 top-20 bg-[#483FB2] z-30  blur-2xl  h-[131px] w-[131px] "></div>
         <div className="absolute  left-[45%] top-[50%] bg-[#483FB2] z-30  blur-[80px]  h-[200px] w-[200px] "></div>
@@ -25,14 +26,14 @@ const page = () => {
             vital role in helping more people discover and engage with
             faith-based content that transforms lives.
           </p>
-          <div className="">
+          <div className="w-fit mx-auto cursor-pointer">
             <AmbassadorForm label="Register here" />
           </div>
         </div>
       </section>
       <Ambassador />
       <div className="sections mt-10">
-        <Faq />
+        <AmbassadorFAQ />
       </div>
     </section>
   );
