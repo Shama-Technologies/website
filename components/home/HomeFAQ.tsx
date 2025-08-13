@@ -7,7 +7,9 @@ import HomeQA from "./HomeQA";
 const HomeFAQ = () => {
   return (
     <section className="bg-[#F7F7FB] py-[50px] rounded-[20px] px-5">
-      <h3 className="header3 text-center mb-10">FAQs</h3>
+      <h3 className="text-xl lg:text-[40px] leading-9 font-bold text-black text-center mb-10">
+        FAQs
+      </h3>
       <div className="grid gap-4 md:w-8/12 mx-auto">
         {HomeQuestionAnswer.map((ques) => {
           return (
