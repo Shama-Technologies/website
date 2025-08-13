@@ -5,7 +5,7 @@ import { AxiosError } from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-export default function ContactForm() {
+export default function PartnerForm() {
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
