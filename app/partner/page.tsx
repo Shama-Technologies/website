@@ -1,7 +1,10 @@
-import PartnerForm from "@/components/forms/PartnerForm";
-import Donation from "@/components/partner/Donation";
-import PartnerType from "@/components/partner/PartnerType";
+// import PartnerForm from "@/components/forms/PartnerForm";
+// import Donation from "@/components/partner/Donation";
+// import PartnerType from "@/components/partner/PartnerType";
 import Link from "next/link";
+import PartnerType from "../../components/partner/PartnerType";
+import Donation from "../../components/partner/Donation";
+import PartnerForm from "../../components/forms/PartnerForm";
 
 const page = () => {
   return (

@@ -1,8 +1,7 @@
-import VisionMission from "@/components/about/VissionMission";
-import GetStarted from "@/components/home/GetStarted";
-
 import Link from "next/link";
 import React from "react";
+import VisionMission from "../../components/about/VissionMission";
+import GetStarted from "../../components/home/GetStarted";
 
 const page = () => {
   return (
