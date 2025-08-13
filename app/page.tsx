@@ -9,8 +9,8 @@ import React from "react";
 const page = () => {
   return (
     <main className="maxContainer  overflow-hidden  text-white">
-      <section className="sections relative pt-[100px] lg:pt-[150px] pb-8 lg:pb-11 bg-[#0C0B15]">
-        <div className="w-[400px] h-[200px] z-20 blur-[40px] lg:rotate-45 bg-gradient-to-r from-[#483FB2]/80 from-% to-[#483FB2]/70 to-100%  absolute -right-36 -top-28 md:top-10"></div>
+      <section className="sections relative overflow-hidden pt-[100px] lg:pt-[150px] pb-8 lg:pb-11 bg-[#0C0B15]">
+        <div className="w-[400px] h-[200px] z-20 blur-[40px] lg:rotate-45 bg-gradient-to-r from-[#483FB2]/80 from-0% opacity-70 to-[#483FB2]/70 to-100%  absolute -right-36 -top-28 md:top-10"></div>
         <div className="flex gap-4 z-40  lg:gap-[140px] flex-col lg:flex-row">
           <div className="w-full lg:w-7/12 px-4 lg:px-0">
             <div className="flex flex-col justify-between text-white">
@@ -19,13 +19,13 @@ const page = () => {
                   Experience
                 </span>{" "}
                 Kingdom Content Anytime,{" "}
-                <span className="relative">
-                  Anywhere
-                  <span className="absolute bg-gradient-to-r  from-[#483FB2]/100 from-0% to-[#868074]/20 to-40% rounded-[50%] w-[180px] h-[35px] lg:w-[350px] lg:h-[80px] top-1 lg:top-2 left-2"></span>
+                <span className="relative inline-block">
+                  <span className="relative z-10">Anywhere</span>
+                  <span className="absolute z-0 bg-gradient-to-r from-[#483FB2]/40 opacity-20 from-30% to-[#F4F7CA] to-80% rounded-[50%] w-[180px] h-[35px] lg:w-[350px] lg:h-[80px] top-1 lg:top-2 left-2"></span>
                 </span>
               </h2>
               <div className="mt-6 lg:mt-[30px] mb-8 lg:mb-[20px]">
-                <p className="leading-[22px] text-[15px] lg:textDefault w-full lg:w-3/4 bg-gradient-to-r from-white from-0% to-[#483FB2] to-100% text-transparent bg-clip-text">
+                <p className="leading-[22px] bg-gradient-to-r  md:leading-10 text-[15px] md:text-[28px] lg:textDefault w-full lg:w-3/4  from-white from-0% to-[#483FB2] to-100% text-transparent bg-clip-text">
                   Stream and download Godly content, connect with the community,
                   and grow in faith.
                 </p>
@@ -35,7 +35,7 @@ const page = () => {
                 <div className="w-[200px] z-20 lg:w-[300px] rotate-180 blur-[100px] h-[200px] lg:h-[200px]  translate-x-8  bg-gradient-to-r opacity-80 from-white/80 from-% to-[#483FB2]/40 to-100%  absolute left-5 lg:left-34 -top-10 "></div>
                 <button
                   type="button"
-                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/0 to-[#483FB2]/25 rounded-[10px]"
+                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/0 from-40%  to-[#483FB2]/55 to-80% opacity-90 rounded-[10px]"
                 >
                   <Image
                     src="/icons/playstoreIcon.png"
@@ -52,7 +52,7 @@ const page = () => {
                 </button>
                 <button
                   type="button"
-                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/0 to-[#483FB2]/25 rounded-[10px]"
+                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/0 from-40%  to-[#483FB2]/55 to-80% opacity-90 rounded-[10px]"
                 >
                   <Image
                     src="/icons/appleIcon.png"
@@ -101,15 +101,18 @@ const page = () => {
             />
           </div>
         </div>
-        <div className=" w-[200px] z-20 lg:w-[400px] h-[200px] blur-[40px]  rotate-45 bg-gradient-to-r from-[#483FB2]/80 from-% to-[#483FB2]/70 to-100%  absolute   bottom-10 -left-40 lg:-left-[240px] "></div>
+        <div className=" w-[200px]  lg:w-[400px] h-[200px] blur-[40px]  rotate-45 bg-gradient-to-r from-[#483FB2]/80 from-% to-[#483FB2]/50 to-100%  opacity-60 absolute   bottom-10 -left-40 lg:-left-[240px] "></div>
       </section>
-      <Feature />
+      <div className="z-50">
+        <Feature />
+      </div>
       <WhyShama />
-      <PartnerHome />
-      <div className="sections">
+      <HomeFAQ />
+
+      <div className="sections mt-20">
         <GetStarted />
       </div>
-      <HomeFAQ />
+      <PartnerHome />
       {/* <Footer /> */}
     </main>
   );

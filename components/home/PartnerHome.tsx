@@ -4,7 +4,7 @@ import PartnerForm from "../forms/PartnerForm";
 
 const PartnerHome = () => {
   return (
-    <section className="sections py-[50px] md:py-24">
+    <section className="sections py-[30px] md:pt-14">
       <div className="md:w-[90%] mx-auto">
         <div className="text-center">
           <h3 className="header3 text-black">Partner with Us</h3>
