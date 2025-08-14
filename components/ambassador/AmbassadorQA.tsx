@@ -22,7 +22,7 @@ const AmbassadorQA = ({ question, answer }: Iprops) => {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="cursor-pointer transition-all duration-300 flex justify-between items-start md:items-center w-full"
+        className="cursor-pointer transition-all duration-300 text-left flex justify-between items-start md:items-center w-full"
       >
         <h5 className="text-xs md:text-xl font-medium">{question}</h5>
         {open ? (
@@ -53,7 +53,7 @@ const AmbassadorQA = ({ question, answer }: Iprops) => {
           >
             {answer.map((ans, idx) => (
               <div key={idx}>
-                <p className="text-sm text-[#6F6C90] md:text-base w-[90%]">
+                <p className="text-sm text-[#6F6C90] text-left md:text-base w-[90%]">
                   {ans}
                 </p>
               </div>

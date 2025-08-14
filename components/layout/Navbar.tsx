@@ -64,7 +64,7 @@ const Navbar = memo(() => {
         <MobileNav openNav={openNav} setOpenNav={setOpenNav} />
         <button
           type="button"
-          className="md:hidden  z-30"
+          className="md:hidden cursor-pointer  z-30"
           onClick={() => setOpenNav(true)}
         >
           <ul className="grid gap-[3px] md:hidden">

@@ -22,7 +22,7 @@ const HomeQA = ({ question, answer }: Iprops) => {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="cursor-pointer transition-all duration-300 flex justify-between items-start md:items-center w-full"
+        className="cursor-pointer transition-all text-left duration-300 flex justify-between items-start md:items-center w-full"
       >
         <h5 className="text-xs md:text-xl text-black font-medium">
           {question}
@@ -53,7 +53,7 @@ const HomeQA = ({ question, answer }: Iprops) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden mt-2"
           >
-            <p className="text-sm text-[#6F6C90] md:text-base w-[90%]">
+            <p className="text-sm text-left text-[#6F6C90] md:text-base w-[90%]">
               {answer}
             </p>
           </motion.div>

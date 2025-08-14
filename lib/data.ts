@@ -338,7 +338,7 @@ export const FooterLinks = [
     header: "Help",
     links: [
       { name: "", link: "#" },
-      { name: "Support", link: "https://wa.me/2347059632797" },
+      { name: "Support", link: "https://wa.me/2348072101662" },
       { name: "FAQs", link: "#Faq" },
     ],
   },
@@ -346,7 +346,7 @@ export const FooterLinks = [
     header: "Connect",
     links: [
       { name: "Contact Us", link: "technologiesshama@gmail.com" },
-      { name: "Whatsapp", link: "https://wa.me/2347059632797" },
+      { name: "Whatsapp", link: "https://wa.me/2348072101662" },
       { name: "Advertise with Us", link: "#" },
     ],
   },
