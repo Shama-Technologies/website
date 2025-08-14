@@ -8,11 +8,11 @@ import AmbassadorForm from "../../components/forms/AmbassadorForm";
 const page = () => {
   return (
     <section>
-      <section className="relative grid place-content-center py-[70px] md:py-[100px] text-white bg-[url('/images/ambassadorHeroBg.png')] bg-no-repeat object-fill lg:bg-cover bg-center h-screen">
+      <section className="relative grid place-content-center py-[70px] md:py-[100px] overflow-x-hidden text-white bg-[url('/images/ambassadorHeroBg.png')] bg-no-repeat object-fill lg:bg-cover bg-center min-h-screen">
         {/* Overlay */}
         <div className="absolute left-0 top-20 bg-[#483FB2] z-30  blur-2xl  h-[131px] w-[131px] "></div>
         <div className="absolute  left-[45%] top-[50%] bg-[#483FB2] z-30  blur-[80px]  h-[200px] w-[200px] "></div>
-        <div className="hiddend md:block absolute -right-10 top-[40%] bg-[#483FB2] z-30  blur-[80px]  h-[250px] w-[250px] "></div>
+        <div className="hidden md:block absolute -right-10 top-[40%] bg-[#483FB2] z-30  blur-[80px]  h-[250px] w-[250px] "></div>
         <div className="absolute inset-0 bg-[#191830E3]/90"></div>
 
         {/* Content */}

@@ -12,25 +12,22 @@ const PartnerType = () => {
           </h3>
         </div>
 
-        <div className="grid md:grid-cols-4  gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {PartnershipTypes.map((partner) => {
             return (
               <div
                 key={partner.title}
-                className="w-fit mx-auto border border-inputGradient"
+                className="w-full border border-inputGradient"
               >
                 <div className="relative">
-                  <div
-                    className="relative w-[300px]  h-[300px] bg-cover bg-center "
-                    style={{ backgroundImage: `url(${partner.img})` }}
-                  >
-                    {/* <Image
+                  <div className="relative w-full aspect-square overflow-hidden">
+                    <Image
                       src={partner.img}
                       alt={partner.title}
-                      width={300}
-                      height={300}
-                      className="w-fit mx-auto"
-                    /> */}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                    />
                     <div className="absolute bg-black/50 inset-0"></div>
                   </div>
                   <p className="absolute top-0 left-0 bg-[#483FB2] text-white text-sm font-bold  px-2 rounded-br-lg">

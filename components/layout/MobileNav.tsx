@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, memo } from "react";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 interface IProps {
   openNav: boolean;
@@ -54,20 +55,21 @@ const MobileNav = memo(({ openNav, setOpenNav }: IProps) => {
                 <button
                   type="button"
                   onClick={() => setOpenNav(false)}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  className="cursor-pointer"
                   aria-label="Close navigation menu"
                 >
-                  <Image
+                  {/* <Image
                     src="/icons/closenav.svg"
                     alt="Close menu"
                     width={24}
                     height={24}
                     priority
-                  />
+                  /> */}
+                  <IoMdCloseCircleOutline className="w-6 h-6" />
                 </button>
               </div>
 
-              <nav>
+              <nav className="text-right">
                 <ul className="space-y-6">
                   {NavLinks.map((link, index) => (
                     <motion.li
@@ -95,9 +97,9 @@ const MobileNav = memo(({ openNav, setOpenNav }: IProps) => {
                   >
                     <button
                       type="button"
-                      className="w-full text-base font-medium px-6 py-3 text-white rounded-lg bg-[#483FB2] hover:bg-[#3c34a3] transition-colors"
+                      className="w-fit text-base font-medium px-6 py-3 text-white rounded-lg bg-[#483FB2] hover:bg-[#3c34a3] transition-colors"
                     >
-                      Become an Ambassador
+                      Ambassador
                     </button>
                   </Link>
                 </div>
