@@ -32,10 +32,10 @@ const page = () => {
               </div>
 
               <div className="flex relative flex-col lg:flex-row gap-4 lg:gap-3">
-                <div className="w-[200px] z-20 lg:w-[300px] rotate-180 blur-[100px] h-[200px] lg:h-[200px]  translate-x-8  bg-gradient-to-r opacity-80 from-white/80 from-% to-[#483FB2]/40 to-100%  absolute left-5 lg:left-34 -top-10 "></div>
+                <div className="w-[200px] z-20 lg:w-[300px] rotate-180 blur-[100px] h-[200px] lg:h-[200px]  translate-x-8  bg-gradient-to-r opacity-80 from-white/80 from-0% to-[#483FB2]/40 to-100%  absolute left-5 lg:left-34 -top-10 "></div>
                 <button
                   type="button"
-                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/0 from-40%  to-[#483FB2]/55 to-80% opacity-90 rounded-[10px]"
+                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/3 from-40%  to-[#483FB2]/40 to-80% opacity-80 rounded-[10px]"
                 >
                   <Image
                     src="/icons/playstoreIcon.png"
@@ -45,14 +45,14 @@ const page = () => {
                     priority
                     className="w-[28px] h-[28px] lg:w-[40px] lg:h-[54px]"
                   />
-                  <p className="text-[15px] lg:text-[20px] leading-5 lg:leading-7">
-                    Coming Soon <br />
+                  <p className="text-[15px] text-center lg:text-[20px] leading-5 lg:leading-7">
+                    <span>Coming Soon</span> <br />
                     <span className="font-bold">Google play</span>
                   </p>
                 </button>
                 <button
                   type="button"
-                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/0 from-40%  to-[#483FB2]/55 to-80% opacity-90 rounded-[10px]"
+                  className="flex items-center z-30 justify-center w-full lg:w-auto gap-3 py-4 lg:py-3 px-6 lg:px-8 bg-gradient-to-r from-[#999999]/3 from-40%  to-[#483FB2]/40 to-80% opacity-80  rounded-[10px]"
                 >
                   <Image
                     src="/icons/appleIcon.png"

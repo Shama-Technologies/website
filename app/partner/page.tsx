@@ -10,11 +10,11 @@ const page = () => {
   return (
     <main className="pt-[80px]">
       <section
-        className="relative text-white object-fill bg-center  md:object-center  md:object-cover  bg-no-repeat h-[400px] "
+        className="relative text-white object-fill bg-center  md:object-center pb-5 md:object-cover  bg-no-repeat h-[400px] "
         style={{ backgroundImage: "url('/images/partnerHeroBg.png')" }}
       >
         {/* Background Overlay */}
-        <div className="absolute right-0 top-[20%] bg-[#483FB2] z-30 blur-[100px]  lg:blur-[80px]  h-[250px] w-[250px] "></div>
+        <div className="absolute right-0 top-[20%] bg-[#483FB2] max-md:opacity-40 z-30 blur-[100px]  lg:blur-[80px]  h-[250px] w-[250px] "></div>
 
         <div className="absolute inset-0 bg-[#191830B0]/70"></div>
 
@@ -33,11 +33,15 @@ const page = () => {
             </p>
           </div>
 
-          <Link href="/partner">
-            <button className="mt-10 bg-[#483FB2] text-white text-lg md:text-xl font-bold py-3 px-8 md:py-4 md:px-12 rounded-lg">
+          <button className="mt-10 bg-[#483FB2] text-white text-lg md:text-xl font-bold py-3 px-8 md:py-4 md:px-12 rounded-lg">
+            {/* <a >Donate now</a> */}
+            <Link
+              href="https://paystack.shop/pay/-91i0l6by7"
+              className="cursor-pointer"
+            >
               Partner with us
-            </button>
-          </Link>
+            </Link>
+          </button>
         </div>
       </section>
       <PartnerType />

@@ -15,7 +15,7 @@ const AmbassadorQA = ({ question, answer }: Iprops) => {
 
   return (
     <div
-      className={`border bg-white rounded-lg md:rounded-[18px] px-2 md:px-10 py-4 md:py-7 shadow-md ${
+      className={`border border-white bg-white rounded-lg md:rounded-[18px] px-2 md:px-10 py-4 md:py-7 shadow-md ${
         open ? "border-2 border-[#483FB2]" : ""
       }`}
     >
