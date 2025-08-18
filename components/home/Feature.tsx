@@ -7,10 +7,10 @@ const Feature = () => {
     <section className="sections z-50 bg-white py-[50px] md:py-[100px] text-black">
       <div>
         <h3 className="mb-[30px] md:mb-10 header3 ">Featured Content</h3>
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {Featured.map((feature, index) => {
             return (
-              <div key={feature.title} className="relative">
+              <div key={feature.title} className="relative w-fit mx-auto">
                 <Image
                   src={feature.img}
                   alt={feature.title}
