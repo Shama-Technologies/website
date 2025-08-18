@@ -5,7 +5,7 @@ const GetStarted = () => {
   return (
     <section className="bg-[#483FB2]  flex max-md:flex-col justify-between rounded-3xl  mb-10 text-white md:px-10 pt-10">
       <div className="max-md:text-center px-4 flex flex-col max-md:items-center pb-10">
-        <h3 className="text-base leading-6 md:text-4xl">
+        <h3 className="text-base leading-6 md:text-4xl md:leading-10">
           Amplify your message,{" "}
           <span style={{ fontStyle: "italic" }} className="italics">
             reach more souls
@@ -24,7 +24,7 @@ const GetStarted = () => {
           </button>
         </a>
       </div>
-      <div>
+      <div className="md:hidden lg:block">
         <Image
           src="/images/shamaIphone.png"
           alt="Shama Iphone"
