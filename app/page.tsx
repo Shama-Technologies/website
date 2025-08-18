@@ -31,7 +31,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="flex relative flex-col lg:flex-row gap-4 lg:gap-3">
+              <div className="flex relative flex-col xl:flex-row gap-4 lg:gap-3">
                 <div className="w-[200px] z-20 lg:w-[300px] rotate-180 blur-[100px] h-[200px] lg:h-[200px]  translate-x-8  bg-gradient-to-r opacity-80 from-white/80 from-0% to-[#483FB2]/40 to-100%  absolute left-5 lg:left-34 -top-10 "></div>
                 <button
                   type="button"
