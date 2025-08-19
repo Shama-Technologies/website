@@ -225,10 +225,10 @@ export const HomeQuestionAnswer = [
     answer:
       "No, everyone has access to Shama but only Christian content can be found on the shama app.",
   },
-  {
-    question: "What kind of Content is found on the Shama app?",
-    answer: "Only Christian contents are made available on the app.",
-  },
+  // {
+  //   question: "What kind of Content is found on the Shama app?",
+  //   answer: "Only Christian contents are made available on the app.",
+  // },
   {
     question:
       "If I have information or inquiries about the program who do I reach?",
