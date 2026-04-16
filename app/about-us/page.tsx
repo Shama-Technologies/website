@@ -3,6 +3,25 @@ import React from "react";
 import VisionMission from "../../components/about/VissionMission";
 import GetStarted from "../../components/home/GetStarted";
 
+export const metadata = {
+  title: 'About Us | Shama — Our Mission & Vision',
+  description: 'Learn about Shama — a gospel digital platform founded in 2024 to preserve Christian heritage digitally and create a centralized space for believers to grow in faith and community.',
+  keywords: 'about shama, christian platform mission, gospel digital platform, christian community, faith based app',
+  openGraph: {
+    title: 'About Us | Shama — Our Mission & Vision',
+    description: 'Shama was founded to bridge the gap between God\'s word and His people in the digital age.',
+    url: 'https://shamaapp.com/about-us',
+    siteName: 'Shama',
+    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Shama',
+    description: 'Shama was founded to bridge the gap between God\'s word and His people in the digital age.',
+    images: ['https://shamaapp.com/og-image.png'],
+  },
+}
 const page = () => {
   return (
     <section className="overflow-hidden">
