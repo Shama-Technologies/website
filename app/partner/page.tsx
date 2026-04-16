@@ -6,6 +6,25 @@ import PartnerType from "../../components/partner/PartnerType";
 import Donation from "../../components/partner/Donation";
 import PartnerForm from "../../components/forms/PartnerForm";
 
+export const metadata = {
+  title: 'Partner With Us | Shama — Spread the Kingdom Message',
+  description: 'Partner with Shama through content collaborations, ministry partnerships, sponsorships, or donations. Help us make faith-based content accessible to Christians worldwide.',
+  keywords: 'partner with shama, christian ministry partnership, gospel sponsorship, donate christian platform, kingdom content',
+  openGraph: {
+    title: 'Partner With Us | Shama',
+    description: 'Collaborate with Shama to spread the Gospel. Content partnerships, ministry partnerships, sponsorships and donations available.',
+    url: 'https://shamaapp.com/partner',
+    siteName: 'Shama',
+    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Partner With Us | Shama',
+    description: 'Collaborate with Shama to spread the Gospel globally.',
+    images: ['https://shamaapp.com/og-image.png'],
+  },
+}
 const page = () => {
   return (
     <main className="pt-[80px]">
