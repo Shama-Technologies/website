@@ -17,8 +17,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shama",
-  description: "...bringing the gospel closer to you",
+  title: 'Shama | Bringing the Gospel Closer to You',
+  description: 'Stream and download sermons, worship music, and podcasts on Shama — the faith-based platform for Christians to grow spiritually and connect with a global community.',
+  keywords: 'christian app, sermons, gospel music, worship, podcasts, faith, nigeria, africa, christian streaming',
+  metadataBase: new URL('https://shamaapp.com'),
+  openGraph: {
+    title: 'Shama | Bringing the Gospel Closer to You',
+    description: 'Stream and download sermons, worship music, and podcasts on Shama.',
+    url: 'https://shamaapp.com',
+    siteName: 'Shama',
+    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shama | Bringing the Gospel Closer to You',
+    description: 'Stream and download sermons, worship music, and podcasts on Shama.',
+    images: ['https://shamaapp.com/og-image.png'],
+  },
 };
 
 export default function RootLayout({
