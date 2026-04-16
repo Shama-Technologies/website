@@ -5,6 +5,25 @@ import React from "react";
 import AmbassadorFAQ from "../../components/ambassador/AmbassadorFAQ";
 import AmbassadorForm from "../../components/forms/AmbassadorForm";
 
+export const metadata = {
+  title: 'Become a Shama Ambassador | Represent the Kingdom',
+  description: 'Join the Shama Ambassador Program and help make Kingdom content accessible to believers worldwide. Enjoy exclusive content, leadership training, networking, and career development.',
+  keywords: 'shama ambassador, christian ambassador program, campus fellowship, gospel outreach, kingdom ambassador nigeria',
+  openGraph: {
+    title: 'Become a Shama Ambassador | Represent the Kingdom',
+    description: 'Join the Shama Ambassador Program — exclusive content access, leadership training, networking, and more.',
+    url: 'https://shamaapp.com/ambassador',
+    siteName: 'Shama',
+    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Become a Shama Ambassador',
+    description: 'Join the Shama Ambassador Program and help spread Kingdom content worldwide.',
+    images: ['https://shamaapp.com/og-image.png'],
+  },
+}
 const page = () => {
   return (
     <section>
