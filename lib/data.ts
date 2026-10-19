@@ -116,7 +116,7 @@ export const PartnerWithUs = [
   {
     title: "Expand Our Reach",
     description:
-      "With you help, we can grow Shama into a platform accessible to millions, breaking barriers of distance and technology.",
+      "With your help, we can grow Shama into a platform accessible to millions, breaking barriers of distance and technology.",
   },
   {
     title: "Building a Stronger Christian Community",
@@ -138,7 +138,7 @@ export const DonationOption = [
   {
     title: "In-kind Support",
     description:
-      "Offer resources such as technical expertise, marketing tols and resources, or content distribution channles",
+      "Offer resources such as technical expertise, marketing tools and resources, or content distribution channels",
   },
 ];
 

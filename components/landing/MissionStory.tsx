@@ -26,8 +26,8 @@ export default function MissionStory() {
         </Reveal>
         <ol className="grid gap-3">
           {values.map(([title, body], i) => (
-            <Reveal key={title} delay={i * 0.06}>
-              <li className="group flex items-center gap-5 rounded-2xl border border-line bg-white/[0.02] p-5 transition-colors hover:border-line-2 hover:bg-brand/10">
+            <Reveal as="li" key={title} delay={i * 0.06}>
+              <div className="group flex items-center gap-5 rounded-2xl border border-line bg-white/[0.02] p-5 transition-colors hover:border-line-2 hover:bg-brand/10">
                 <span className="font-mono text-xs text-fg-3 transition-colors group-hover:text-glow">
                   0{i + 1}
                 </span>
@@ -35,7 +35,7 @@ export default function MissionStory() {
                   <b className="font-display text-xl font-semibold">{title}</b>
                   <span className="text-sm text-fg-2">{body}</span>
                 </span>
-              </li>
+              </div>
             </Reveal>
           ))}
         </ol>

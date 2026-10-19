@@ -1,4 +1,4 @@
-import { STUDIO_URL } from "../../lib/site";
+import { MINISTRY_FORM_URL, STUDIO_URL } from "../../lib/site";
 import Reveal from "../site/Reveal";
 import { Button, Pill } from "../site/ui";
 
@@ -27,6 +27,9 @@ export default function ForMinistries() {
                 </p>
                 <div className="flex flex-wrap gap-2.5">
                   <Button href={STUDIO_URL}>Open Shama Studio</Button>
+                  <Button href={MINISTRY_FORM_URL} variant="ghost">
+                    Or let us onboard you
+                  </Button>
                 </div>
               </div>
               <ol className="grid gap-2.5">

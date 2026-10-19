@@ -2,17 +2,54 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { HomeQuestionAnswer } from "../../lib/data";
-import { SectionHead } from "../site/ui";
+import { SectionHead } from "./ui";
 
-export default function Faq() {
+export type FaqItem = { question: string; answer: string | string[] };
+
+// Answers given as a list render lead-in lines (ending in ":") as text and
+// the rest as bullets.
+function Answer({ answer }: { answer: FaqItem["answer"] }) {
+  if (!Array.isArray(answer)) return <p>{answer}</p>;
+  const blocks: (string | string[])[] = [];
+  for (const line of answer) {
+    if (line.trim().endsWith(":")) blocks.push(line);
+    else if (Array.isArray(blocks[blocks.length - 1])) (blocks[blocks.length - 1] as string[]).push(line);
+    else blocks.push([line]);
+  }
+  return (
+    <div className="grid gap-2">
+      {blocks.map((b, i) =>
+        Array.isArray(b) ? (
+          <ul key={i} className="grid gap-1.5">
+            {b.map((li) => (
+              <li key={li} className="flex gap-2.5">
+                <i className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-brand-2" />
+                {li}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p key={i}>{b}</p>
+        )
+      )}
+    </div>
+  );
+}
+
+export default function Faq({
+  items,
+  title = "Questions, answered.",
+}: {
+  items: FaqItem[];
+  title?: string;
+}) {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section id="faq" className="scroll-mt-24 py-24">
       <div className="wrap max-w-[860px]">
-        <SectionHead pill="FAQs" title="Questions, answered." />
+        <SectionHead pill="FAQs" title={title} />
         <div className="grid gap-2.5">
-          {HomeQuestionAnswer.map((q, i) => {
+          {items.map((q, i) => {
             const isOpen = open === i;
             return (
               <div
@@ -44,7 +81,9 @@ export default function Faq() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="px-5 pb-5 text-sm text-fg-2">{q.answer}</p>
+                      <div className="px-5 pb-5 text-sm text-fg-2">
+                        <Answer answer={q.answer} />
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

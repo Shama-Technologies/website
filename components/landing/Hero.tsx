@@ -47,8 +47,8 @@ export default function Hero() {
           </div>
           <div className="flex flex-wrap gap-9 pt-1.5">
             {[
-              [10000, "Sermons & songs"],
-              [500, "Preachers & artists"],
+              [5000, "Sermons & songs"],
+              [20, "Preachers & artists"],
             ].map(([n, label]) => (
               <div key={label}>
                 <b className="block font-display text-[34px] font-semibold tracking-tight">
