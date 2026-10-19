@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { SiteLinks, STUDIO_URL } from "../../lib/site";
-import Mark from "./Mark";
 
 export default function SiteNav() {
   const pathname = usePathname();
@@ -29,12 +29,15 @@ export default function SiteNav() {
       }`}
     >
       <nav aria-label="Main" className="wrap flex items-center justify-between gap-4 py-4">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2.5 font-display text-[22px] font-semibold tracking-tight"
-        >
-          <Mark className="h-[30px] w-[30px]" />
-          Shama
+        <Link href="/" className="inline-flex items-center" aria-label="Shama home">
+          <Image
+            src="/icons/shamaLogo.svg"
+            alt="Shama"
+            width={166}
+            height={47}
+            priority
+            className="h-7 w-auto md:h-9"
+          />
         </Link>
 
         <div className="hidden items-center gap-7 text-sm text-fg-2 md:flex">
