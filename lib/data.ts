@@ -218,12 +218,12 @@ export const HomeQuestionAnswer = [
   },
   {
     question: "How do I access Shama's content?",
-    answer: "You can access all Content via the shama official app.",
+    answer: "You can access all content via the official Shama app.",
   },
   {
-    question: "Is shama for only believers?",
+    question: "Is Shama only for believers?",
     answer:
-      "No, everyone has access to Shama but only Christian content can be found on the shama app.",
+      "No, everyone has access to Shama, but only Christian content can be found on the Shama app.",
   },
   {
     question: "What kind of Content is found on the Shama app?",
@@ -233,7 +233,7 @@ export const HomeQuestionAnswer = [
     question:
       "If I have information or inquiries about the program who do I reach?",
     answer:
-      "You can also send an email to technologiesshama@gmail.comfor inquiries.",
+      "Send an email to technologiesshama@gmail.com for inquiries.",
   },
   {
     question: "Is it paid or Free?",
@@ -241,7 +241,7 @@ export const HomeQuestionAnswer = [
   },
   {
     question: "Will my content be monetized?",
-    answer: "No, Content on the platform is solely free.",
+    answer: "No, content on the platform is free.",
   },
   {
     question: "Can I run free Ads?",

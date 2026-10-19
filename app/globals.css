@@ -1,18 +1,132 @@
 @import "tailwindcss";
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Shama design system: one dark world shared with the app and Studio. */
+@theme {
+  --color-ink: #0b0a14;
+  --color-ink-2: #13112a;
+  --color-ink-3: #1c1940;
+  --color-line: rgb(196 190 255 / 0.12);
+  --color-line-2: rgb(196 190 255 / 0.22);
+  --color-fg: #f4f2ff;
+  --color-fg-2: #b9b5d6;
+  --color-fg-3: #8a86a8;
+  --color-brand: #483fb2;
+  --color-brand-2: #6c63ff;
+  --color-glow: #8f86ff;
+  --color-live: #31c277;
+
+  --font-display: var(--font-bricolage), "Roc Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-montserrat), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, Menlo, monospace;
+
+  --animate-bob: bob 7s ease-in-out infinite;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-dash: dash 18s linear infinite;
+  --animate-pulse-dot: pulse-dot 1.6s ease-in-out infinite;
+  --animate-eq: eq 1s ease-in-out infinite alternate;
+
+  @keyframes bob {
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -400;
+    }
+  }
+  @keyframes pulse-dot {
+    50% {
+      opacity: 0.3;
+    }
+  }
+  @keyframes eq {
+    from {
+      transform: scaleY(0.25);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
 }
 
-* {
-  padding: none;
-  margin: none;
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-glow);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 @layer utilities {
+  .wrap {
+    @apply mx-auto w-full max-w-[1180px] px-4 md:px-6;
+  }
+
+  /* Gradient headline accent. */
+  .accent {
+    background: linear-gradient(100deg, #b8b2ff 0%, var(--color-brand-2) 55%, #9c8cff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Faint grid that fades out from the top centre. */
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 50% 30%, #000 10%, transparent 70%);
+    opacity: 0.55;
+  }
+
+  .glow-btn {
+    box-shadow:
+      0 0 0 1px rgb(143 134 255 / 0.35),
+      0 10px 30px -10px rgb(108 99 255 / 0.8);
+  }
+  .glow-btn:hover {
+    box-shadow:
+      0 0 0 1px rgb(143 134 255 / 0.6),
+      0 14px 40px -10px rgb(108 99 255 / 1);
+  }
+
+  /* ── Legacy utilities, still used by the About, Partner and Ambassador pages ── */
   .maxContainer {
     @apply max-w-[1440px] mx-auto;
   }
@@ -33,7 +147,7 @@ body {
   }
 
   .para1 {
-    @apply text-base  font-normal md:leading-10 md:text-[28px];
+    @apply text-base font-normal md:leading-10 md:text-[28px];
   }
 
   .textDefault {
@@ -58,5 +172,18 @@ body {
 
   label {
     @apply text-base relative font-medium text-black;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }

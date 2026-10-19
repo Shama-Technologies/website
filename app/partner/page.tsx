@@ -27,7 +27,7 @@ export const metadata = {
 }
 const page = () => {
   return (
-    <main className="pt-[80px]">
+    <main className="bg-white text-[#161617] pt-[80px]">
       <section
         className="relative text-white object-fill bg-center  md:object-center pb-5 md:object-cover  bg-no-repeat h-[400px] "
         style={{ backgroundImage: "url('/images/partnerHeroBg.png')" }}

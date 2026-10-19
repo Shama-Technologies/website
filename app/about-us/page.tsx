@@ -24,7 +24,7 @@ export const metadata = {
 }
 const page = () => {
   return (
-    <section className="overflow-hidden">
+    <section className="bg-white text-[#161617] overflow-hidden">
       <section
         className="relative bg-cover bg-center bg-no-repeat min-h-[500px]"
         style={{ backgroundImage: "url('/images/AboutHeroBg.png')" }}

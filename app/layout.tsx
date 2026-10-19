@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import Navbar from "../components/layout/Navbar";
-// import Navbar from "@/components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+import SiteNav from "../components/site/SiteNav";
+import SiteFooter from "../components/site/SiteFooter";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -37,6 +42,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#0B0A14",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,11 +54,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} relative maxContainer antialiased`}
+        className={`${bricolage.variable} ${montserrat.variable} ${jetbrains.variable} relative antialiased`}
       >
-        <Navbar />
+        <SiteNav />
         {children}
-        <Footer />
+        <SiteFooter />
       </body>
     </html>
   );

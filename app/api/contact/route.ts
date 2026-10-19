@@ -2,11 +2,15 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { escapeHtml, mailConfig } from "../../../lib/mail";
 
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.json();
-    const { user_name, user_email, phone, message } = formData;
+    const user_name = String(formData.user_name ?? "").trim();
+    const user_email = String(formData.user_email ?? "").trim();
+    const phone = String(formData.phone ?? "").trim();
+    const message = String(formData.message ?? "").trim();
 
     // Validate required fields
     if (!user_name || !user_email || !phone || !message) {
@@ -25,13 +29,19 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const mail = mailConfig();
+    if (!mail) {
+      console.error("Email is not configured: set EMAIL_USER and EMAIL_APP_PASSWORD");
+      return NextResponse.json(
+        { success: false, message: "Failed to send email" },
+        { status: 500 }
+      );
+    }
+
     // Create a transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: {
-        user: process.env.NEXT_PUBLIC_EMAIL_USER,
-        pass: process.env.NEXT_PUBLIC_EMAIL_APP_PASSWORD,
-      },
+      auth: { user: mail.user, pass: mail.pass },
     });
 
     // Format current date for the template
@@ -189,15 +199,15 @@ export async function POST(req: NextRequest) {
                 <div class="highlight-title">Contact Details</div>
                 <div class="data-item">
                     <div class="label">Name:</div>
-                    <div class="value">${user_name}</div>
+                    <div class="value">${escapeHtml(user_name)}</div>
                 </div>
                 <div class="data-item">
                     <div class="label">Email:</div>
-                    <div class="value">${user_email}</div>
+                    <div class="value">${escapeHtml(user_email)}</div>
                 </div>
                 <div class="data-item">
                     <div class="label">Phone:</div>
-                    <div class="value">${phone}</div>
+                    <div class="value">${escapeHtml(phone)}</div>
                 </div>
             </div>
             
@@ -206,7 +216,7 @@ export async function POST(req: NextRequest) {
                 
                 <div class="data-item">
                     <div class="value">
-                        <div class="message-box">${message}</div>
+                        <div class="message-box">${escapeHtml(message)}</div>
                     </div>
                 </div>
             </div>
@@ -222,8 +232,8 @@ export async function POST(req: NextRequest) {
 
     // Email options
     const mailOptions = {
-      from: `"Shama App" <${process.env.NEXT_PUBLIC_EMAIL_FROM}>`,
-      to: process.env.NEXT_PUBLIC_EMAIL_TO,
+      from: `"Shama App" <${mail.from}>`,
+      to: mail.to,
       subject: "New Partnership Form Submission",
       html: htmlContent,
       // Optional: Send a copy to the user
@@ -243,10 +253,8 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     console.error("Error sending email:", error);
-    const errorMessage =
-      error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { success: false, message: "Failed to send email", error: errorMessage },
+      { success: false, message: "Failed to send email" },
       { status: 500 }
     );
   }

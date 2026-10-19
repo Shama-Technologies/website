@@ -26,7 +26,7 @@ export const metadata = {
 }
 const page = () => {
   return (
-    <section>
+    <section className="bg-white text-[#161617]">
       <section className="relative grid place-content-center py-[70px] md:py-[100px] overflow-x-hidden text-white bg-[url('/images/ambassadorHeroBg.png')] bg-no-repeat object-fill lg:bg-cover bg-center min-h-screen">
         {/* Overlay */}
         <div className="absolute left-0 top-20 bg-[#483FB2] z-30  blur-2xl  h-[131px] w-[131px] "></div>
