@@ -1,11 +1,11 @@
 // Links shared by the site nav, footer and Home page.
 export const STUDIO_URL = "https://studio.shamaapp.com";
-export const DONATE_URL = "https://paystack.shop/pay/-91i0l6by7";
+export const DONATE_URL = "https://paystack.shop/pay/app-shama";
 export const WHATSAPP_URL = "https://wa.me/2348072101662";
 // Google Form for ministries who would rather be onboarded by the team.
 export const MINISTRY_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSekRZyaWM-4kK--pdI377oQ16AW1u2DR5SQhKHySG7S4AjqUg/viewform";
-export const CONTACT_EMAIL = "technologiesshama@gmail.com";
+export const CONTACT_EMAIL = "shama@shamaapp.com";
 
 export const SiteLinks = [
   { name: "Home", href: "/" },

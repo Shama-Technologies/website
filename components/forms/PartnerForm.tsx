@@ -28,7 +28,7 @@ export default function PartnerForm() {
       setForm(empty);
       setStatus({ type: "success", message: "Thank you! We've received your message and will be in touch soon." });
     } catch {
-      setStatus({ type: "error", message: "Your message didn't send. Please try again, or email technologiesshama@gmail.com." });
+      setStatus({ type: "error", message: "Your message didn't send. Please try again, or email shama@shamaapp.com." });
     } finally {
       setSending(false);
     }

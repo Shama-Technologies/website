@@ -20,8 +20,8 @@ const columns = [
   {
     header: "Get involved",
     links: [
-      { name: "Partner with us", href: "/partner" },
-      { name: "Become an ambassador", href: "/ambassador" },
+      { name: "Partner with us", href: "/partner#partner-form" },
+      { name: "Become an ambassador", href: "/ambassador#apply" },
       { name: "Donate", href: DONATE_URL },
     ],
   },

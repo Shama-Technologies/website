@@ -233,7 +233,7 @@ export const HomeQuestionAnswer = [
     question:
       "If I have information or inquiries about the program who do I reach?",
     answer:
-      "Send an email to technologiesshama@gmail.com for inquiries.",
+      "Send an email to shama@shamaapp.com for inquiries.",
   },
   {
     question: "Is it paid or Free?",
@@ -311,7 +311,7 @@ export const AmbassadorQuestionAnswer = [
       "If I have information or inquiries about the program, who do I reach?",
     answer: [
       "All ambassadors would be given access to ambassador's community on slack",
-      "You can Also send an email to technologiesshama@gmail.com for inquiries",
+      "You can Also send an email to shama@shamaapp.com for inquiries",
     ],
   },
   {
@@ -345,7 +345,7 @@ export const FooterLinks = [
   {
     header: "Connect",
     links: [
-      { name: "Contact Us", link: "technologiesshama@gmail.com" },
+      { name: "Contact Us", link: "shama@shamaapp.com" },
       { name: "Whatsapp", link: "https://wa.me/2348072101662" },
       { name: "Advertise with Us", link: "#" },
     ],
@@ -354,7 +354,7 @@ export const FooterLinks = [
     header: "Partner",
     links: [
       { name: "", link: "#" },
-      { name: "Donate", link: "https://paystack.shop/pay/-91i0l6by7" },
+      { name: "Donate", link: "https://paystack.shop/pay/app-shama" },
       { name: "Ambassador", link: "/ambassador" },
     ],
   },

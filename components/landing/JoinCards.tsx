@@ -8,13 +8,13 @@ const cards = [
     title: "Partner with us",
     body: "Ministries, brands and creators: collaborate on content, events and outreach.",
     cta: "Become a partner",
-    href: "/partner",
+    href: "/partner#partner-form",
   },
   {
     title: "Become an ambassador",
     body: "Represent Shama on your campus or in your church and grow as a leader.",
     cta: "Join the programme",
-    href: "/ambassador",
+    href: "/ambassador#apply",
   },
   {
     title: "Give",
