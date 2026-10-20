@@ -42,7 +42,7 @@ const columns = [
 ];
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  const cls = "text-sm text-fg-2 transition-colors hover:text-fg";
+  const cls = "-my-1 inline-block py-1 text-sm text-fg-2 transition-colors hover:text-fg";
   if (href.startsWith("/")) {
     return (
       <Link href={href} className={cls}>
@@ -91,7 +91,7 @@ export default function SiteFooter() {
 
         <div
           aria-hidden="true"
-          className="select-none text-center font-display text-[clamp(110px,26vw,360px)] font-bold leading-[0.78] tracking-[-0.05em] text-transparent [background-clip:text] [-webkit-background-clip:text] bg-[linear-gradient(180deg,rgba(185,178,255,.75),rgba(72,63,178,.15)_70%,transparent)] -mb-[0.12em]"
+          className="pointer-events-none select-none text-center font-display text-[clamp(110px,26vw,360px)] font-bold leading-[0.78] tracking-[-0.05em] text-transparent [background-clip:text] [-webkit-background-clip:text] bg-[linear-gradient(180deg,rgba(185,178,255,.75),rgba(72,63,178,.15)_70%,transparent)] -mb-[0.12em]"
         >
           shama
         </div>
@@ -105,7 +105,7 @@ export default function SiteFooter() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-fg"
+                className="-my-1 inline-block py-1 transition-colors hover:text-fg"
               >
                 {s.name}
               </a>
