@@ -1,9 +1,9 @@
-import Ambassador from "../../components/ambassador/Ambassador";
-
-import React from "react";
-
-import AmbassadorFAQ from "../../components/ambassador/AmbassadorFAQ";
 import AmbassadorForm from "../../components/forms/AmbassadorForm";
+import Faq from "../../components/site/Faq";
+import PageHero from "../../components/site/PageHero";
+import Reveal from "../../components/site/Reveal";
+import { Button, Pill, SectionHead } from "../../components/site/ui";
+import { AmbassadorQuestionAnswer, BecomeAmbassador, WhyAmbassador } from "../../lib/data";
 
 export const metadata = {
   title: 'Become a Shama Ambassador | Represent the Kingdom',
@@ -24,38 +24,79 @@ export const metadata = {
     images: ['https://shamaapp.com/og-image.png'],
   },
 }
-const page = () => {
-  return (
-    <section>
-      <section className="relative grid place-content-center py-[70px] md:py-[100px] overflow-x-hidden text-white bg-[url('/images/ambassadorHeroBg.png')] bg-no-repeat object-fill lg:bg-cover bg-center min-h-screen">
-        {/* Overlay */}
-        <div className="absolute left-0 top-20 bg-[#483FB2] z-30  blur-2xl  h-[131px] w-[131px] "></div>
-        <div className="absolute  left-[45%] top-[50%] bg-[#483FB2] z-30  blur-[80px]  h-[200px] w-[200px] "></div>
-        <div className="hidden md:block absolute -right-10 top-[40%] bg-[#483FB2] z-30  blur-[80px]  h-[250px] w-[250px] "></div>
-        <div className="absolute inset-0 bg-[#191830E3]/90"></div>
 
-        {/* Content */}
-        <div className="relative z-40 text-center  lg:max-w-[72%] mt-16 mx-auto px-4 sm:px-8">
-          <h2 className="text-[28px] leading-7 md:text-[50px] md:leading-[80px] font-bold">
-            Become a Shama Ambassador
-          </h2>
-          <p className="mt-[46px] mb-[57px] my-10 text-base md:text-lg xl:text-[30px] leading-10 lg:leading-[45px] font-normal">
-            Shama is on a mission to make Kingdom content easily accessible to
-            believers across the world. As a Shama Ambassador, you’ll play a
-            vital role in helping more people discover and engage with
-            faith-based content that transforms lives.
-          </p>
-          <div className="w-fit mx-auto cursor-pointer">
-            <AmbassadorForm label="Register here" />
+export default function AmbassadorPage() {
+  return (
+    <main className="overflow-hidden">
+      <PageHero
+        pill="Ambassador programme"
+        image="/images/ambassadorHeroBg.png"
+        title={
+          <>
+            Become a <span className="accent">Shama Ambassador.</span>
+          </>
+        }
+      >
+        <p className="max-w-[56ch] text-[17px] text-fg-2">
+          Shama is on a mission to make Kingdom content easily accessible to believers across the
+          world. As an ambassador, you&apos;ll help more people discover faith-based content that
+          transforms lives.
+        </p>
+        <Button href="/ambassador#apply">Apply now</Button>
+      </PageHero>
+
+      <section className="py-24">
+        <div className="wrap">
+          <SectionHead
+            pill="Why join"
+            title={
+              <>
+                Grow while you <span className="accent">serve.</span>
+              </>
+            }
+          />
+          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {WhyAmbassador.map((b, i) => (
+              <Reveal as="li" key={b.title} delay={(i % 4) * 0.06}>
+                <div className="group grid h-full content-start gap-4 rounded-3xl border border-line bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-line-2 hover:bg-brand/10">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 font-mono text-xs text-fg-3 transition group-hover:bg-brand group-hover:text-white">
+                    0{i + 1}
+                  </span>
+                  <h3 className="text-lg font-semibold leading-tight">{b.title}</h3>
+                  <p className="text-sm text-fg-2">{b.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section id="apply" className="scroll-mt-24 py-24">
+        <div className="wrap grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start">
+          <Reveal className="grid content-start justify-items-start gap-5 lg:sticky lg:top-28">
+            <Pill>Who we&apos;re looking for</Pill>
+            <h2 className="text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
+              All you need to <span className="accent">become an ambassador.</span>
+            </h2>
+            <ul className="grid gap-3">
+              {BecomeAmbassador.map((r) => (
+                <li key={r} className="flex items-start gap-3 text-fg-2">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-none text-live" aria-hidden="true">
+                    <path d="M5 12l5 5L20 7" />
+                  </svg>
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <div className="rounded-[28px] border border-line-2 bg-[radial-gradient(circle_at_100%_0%,rgba(143,134,255,.25),transparent_50%),linear-gradient(180deg,rgba(28,25,64,.6),rgba(19,17,42,.6))] p-6 md:p-10">
+            <h3 className="mb-6 text-2xl font-semibold">Apply to the programme</h3>
+            <AmbassadorForm />
           </div>
         </div>
       </section>
-      <Ambassador />
-      <div className="sections mt-10">
-        <AmbassadorFAQ />
-      </div>
-    </section>
-  );
-};
 
-export default page;
+      <Faq items={AmbassadorQuestionAnswer} />
+    </main>
+  );
+}

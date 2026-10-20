@@ -1,7 +1,8 @@
-import Link from "next/link";
-import React from "react";
-import VisionMission from "../../components/about/VissionMission";
-import GetStarted from "../../components/home/GetStarted";
+import ForMinistries from "../../components/landing/ForMinistries";
+import JoinCards from "../../components/landing/JoinCards";
+import PageHero from "../../components/site/PageHero";
+import Reveal from "../../components/site/Reveal";
+import { Pill, SectionHead } from "../../components/site/ui";
 
 export const metadata = {
   title: 'About Us | Shama — Our Mission & Vision',
@@ -22,61 +23,133 @@ export const metadata = {
     images: ['https://shamaapp.com/og-image.png'],
   },
 }
-const page = () => {
+
+const story = [
+  [
+    "2024",
+    "A mandate",
+    "We received a mandate from God to preserve the heritage of the Christian faith digitally. Shama was established as a gospel digital platform to bridge the gap between God's word and His people.",
+  ],
+  [
+    "The problem",
+    "Lost in the noise",
+    "Social media is flooded with content, making it hard to discern truth from deception. Kingdom content struggles to get the visibility it deserves, held back by censorship and propaganda.",
+  ],
+  [
+    "Shama",
+    "A refuge",
+    "One centralised space where Christians can stream, download and engage with Christian content, built to aid spiritual growth, strengthen community and enrich the Christian journey.",
+  ],
+];
+
+const values = [
+  ["Faith-centred", "Christ at the centre of everything we put out."],
+  ["Community", "Believers and ministries growing together."],
+  ["Integrity", "Honest content, honest platform."],
+  ["Accessibility", "The word within reach of everyone, everywhere."],
+  ["Inspiration", "Content that lifts and strengthens."],
+];
+
+export default function AboutPage() {
   return (
-    <section className="overflow-hidden">
-      <section
-        className="relative bg-cover bg-center bg-no-repeat min-h-[500px]"
-        style={{ backgroundImage: "url('/images/AboutHeroBg.png')" }}
+    <main className="overflow-hidden">
+      <PageHero
+        pill="About Shama"
+        image="/images/AboutHeroBg.png"
+        title={
+          <>
+            Bridging God&apos;s word <span className="accent">and His people.</span>
+          </>
+        }
       >
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-[#131324B8]/90"></div>
+        <p className="max-w-[52ch] text-[17px] text-fg-2">
+          Empowering Christians worldwide to grow in faith and community.
+        </p>
+      </PageHero>
 
-        {/* Text Content */}
-        <div className="relative z-10 flex flex-col mt-10 text-white px-4 sm:px-8 lg:px-16 py-10 md:pt-32">
-          <h2 className="text-4xl md:text-6xl text-center lg:text-7xl font-bold leading-tight">
-            Welcome to SHAMA
-          </h2>
-          <p className="text-lg md:text-xl text-center lg:text-2xl mt-4 ">
-            Empowering Christians worldwide to grow in faith and community.
-          </p>
-
-          <div className="text-base mt-8 text-white font-normal md:text-lg lg:text-[28px]  lg:leading-[40px] ">
-            <p>
-              In 2024, we received a mandate from God to preserve the heritage
-              of the Christian faith digitally. SHAMA was established as a
-              gospel digital platform aimed to bridge the gap between God&apos;s
-              words and His people.
-            </p>
-            <p>
-              In today&apos;s digital age, social media platforms are flooded
-              with a vast amount of content, making it increasingly challenging
-              to discern truth from deception. Additionally, Kingdom content
-              struggles to have as much visibility as it should due to
-              censorship and propaganda against it.
-            </p>
-            <p className="mt-10">
-              Shama aims to provide a refuge from the chaos of misinformation.
-              Offering to create a centralized digital space where Christians
-              can easily stream, download, and engage with diverse Christian
-              content. We aim to aid spiritual growth, strengthen community
-              connections, and provide enriching resources that support and
-              enhance the Christian journey.
-            </p>
-          </div>
-          <Link href="/partner" className="w-fit mx-auto mt-12">
-            <button className=" bg-[#483FB2] text-white  text-lg md:text-xl font-bold py-3 px-8 md:py-4 md:px-12 rounded-lg">
-              Partner with us
-            </button>
-          </Link>
+      <section className="py-24">
+        <div className="wrap">
+          <SectionHead
+            pill="Our story"
+            title={
+              <>
+                Why we <span className="accent">exist.</span>
+              </>
+            }
+          />
+          <ol className="grid gap-4 md:grid-cols-3">
+            {story.map(([kicker, title, body], i) => (
+              <Reveal as="li" key={title} delay={i * 0.1}>
+                <div className="relative grid h-full content-start gap-4 rounded-3xl border border-line bg-white/[0.02] p-6">
+                  <span className="w-fit rounded-full border border-line-2 bg-ink px-3 py-1.5 font-mono text-xs text-glow">
+                    {kicker}
+                  </span>
+                  <h3 className="text-2xl font-semibold">{title}</h3>
+                  <p className="text-sm leading-relaxed text-fg-2">{body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </section>
-      <VisionMission />
-      <div className="sections mt-10">
-        <GetStarted />
-      </div>
-    </section>
-  );
-};
 
-export default page;
+      <section className="py-12">
+        <div className="wrap grid gap-4 md:grid-cols-2">
+          {[
+            [
+              "Vision",
+              "To be the leading digital platform that empowers Christians worldwide to grow in faith, knowledge, and community through seamless access to high-quality godly content.",
+            ],
+            [
+              "Mission",
+              "To create a centralised digital space where Christians can easily stream, download, and engage with diverse Christian content, inspiring spiritual growth, fostering community and supporting the Christian journey.",
+            ],
+          ].map(([title, body], i) => (
+            <Reveal key={title} delay={i * 0.1}>
+              <div className="relative h-full overflow-hidden rounded-[28px] border border-line-2 bg-[radial-gradient(circle_at_90%_0%,rgba(143,134,255,.35),transparent_55%),linear-gradient(140deg,#221E52,#121029_70%)] p-8 md:p-10">
+                <Pill>{title}</Pill>
+                <p className="mt-6 font-display text-[clamp(22px,2.4vw,30px)] font-medium leading-snug tracking-tight">
+                  {body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="wrap">
+          <SectionHead
+            pill="What defines us"
+            title={
+              <>
+                Five values, <span className="accent">one compass.</span>
+              </>
+            }
+          >
+            Our values shape the Shama culture: who we are, what we do every day, and how we serve
+            the diverse streams of the body of Christ.
+          </SectionHead>
+          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {values.map(([title, body], i) => (
+              <Reveal as="li" key={title} delay={i * 0.06}>
+                <div className="group grid h-full content-between gap-10 rounded-3xl border border-line bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-line-2 hover:bg-brand/10">
+                  <span className="font-mono text-xs text-fg-3 transition-colors group-hover:text-glow">
+                    0{i + 1}
+                  </span>
+                  <span className="grid gap-1">
+                    <b className="font-display text-xl font-semibold">{title}</b>
+                    <span className="text-sm text-fg-2">{body}</span>
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <ForMinistries />
+      <JoinCards />
+    </main>
+  );
+}
