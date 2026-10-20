@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
 import { Field, FormStatus, inputClass } from "../site/fields";
 
-// Field names match the existing EmailJS template and Google Sheet columns.
+// Field names match the existing EmailJS template.
 const fields = [
   { name: "name", label: "Full name", type: "text", placeholder: "Your name", autoComplete: "name" },
   { name: "email", label: "Email", type: "email", placeholder: "you@example.com", autoComplete: "email" },
@@ -27,35 +27,33 @@ export default function AmbassadorForm() {
     setSending(true);
     setStatus(null);
 
-    // Also record the application in the Google Sheet, if configured.
-    const sheet = process.env.NEXT_PUBLIC_SPREADSHEET;
-    if (sheet) {
-      const data = new FormData(form.current);
-      fetch(sheet, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(
-          [...data.entries()].map(([k, v]) => [k, String(v)])
-        ).toString(),
-      }).catch(() => {});
-    }
+    const data = Object.fromEntries(new FormData(form.current)) as Record<string, string>;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-    try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        form.current,
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" }
-      );
+    // Save to the team sheet and email via EmailJS; either is enough.
+    const [sheet, email] = await Promise.allSettled([
+      fetch("/api/ambassador", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        if (!res.ok) throw new Error(`Sheet save failed (${res.status})`);
+      }),
+      serviceId && templateId && publicKey
+        ? emailjs.sendForm(serviceId, templateId, form.current, { publicKey })
+        : Promise.reject(new Error("EmailJS is not configured")),
+    ]);
+
+    if (sheet.status === "rejected" && email.status === "rejected") {
+      console.error("Ambassador application failed", sheet.reason, email.reason);
+      setStatus({ type: "error", message: "Your application didn't send. Please try again, or email technologiesshama@gmail.com." });
+    } else {
       form.current.reset();
       setStatus({ type: "success", message: "Application received! We'll be in touch by email." });
-    } catch (error) {
-      console.error("Ambassador application failed", error);
-      setStatus({ type: "error", message: "Your application didn't send. Please try again, or email technologiesshama@gmail.com." });
-    } finally {
-      setSending(false);
     }
+    setSending(false);
   };
 
   return (

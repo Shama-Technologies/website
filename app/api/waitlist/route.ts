@@ -3,8 +3,10 @@ export const runtime = "nodejs";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { escapeHtml, mailConfig } from "../../../lib/mail";
+import { appendToSheet } from "../../../lib/sheet";
 
-// Emails the team each new waitlist sign-up from the hero form.
+// Records each waitlist sign-up from the hero form in the team sheet and
+// emails the team. Succeeds if either goes through.
 export async function POST(req: NextRequest) {
   let email = "";
   try {
@@ -18,10 +20,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, message: "Invalid email" }, { status: 400 });
   }
 
+  const joined = () => NextResponse.json({ success: true });
+  const failed = () =>
+    NextResponse.json({ success: false, message: "Failed to join" }, { status: 500 });
+
+  const saved = appendToSheet("Waitlist", { Email: email });
+
   const mail = mailConfig();
   if (!mail) {
     console.error("Email is not configured: set EMAIL_USER and EMAIL_APP_PASSWORD");
-    return NextResponse.json({ success: false, message: "Failed to join" }, { status: 500 });
+    return (await saved) ? joined() : failed();
   }
 
   try {
@@ -37,9 +45,10 @@ export async function POST(req: NextRequest) {
       text: `${email} joined the Shama waitlist on ${new Date().toUTCString()}.`,
       html: `<p><b>${escapeHtml(email)}</b> joined the Shama waitlist on ${new Date().toUTCString()}.</p>`,
     });
-    return NextResponse.json({ success: true });
+    await saved;
+    return joined();
   } catch (error) {
     console.error("Error sending waitlist email:", error);
-    return NextResponse.json({ success: false, message: "Failed to join" }, { status: 500 });
+    return (await saved) ? joined() : failed();
   }
 }
