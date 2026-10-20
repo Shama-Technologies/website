@@ -16,9 +16,9 @@ export const SiteLinks = [
 
 export const Socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/company/theshama-app/" },
-  { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61561300449671" },
+  { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61590590341673" },
   { name: "X", href: "https://x.com/theshamaapp" },
-  { name: "Instagram", href: "https://www.instagram.com/theshamaapp/" },
+  { name: "Instagram", href: "https://www.instagram.com/_theshamaapp/" },
 ];
 
 // Real channels on Shama, shown in the marquee.
