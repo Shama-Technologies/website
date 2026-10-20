@@ -43,7 +43,7 @@ export default function Waitlist() {
   }
 
   return (
-    <div id="waitlist" className="grid w-full max-w-[460px] scroll-mt-28 gap-2">
+    <div id="waitlist" className="grid w-full max-w-[460px] scroll-mt-28 grid-cols-1 gap-2">
       <form
         onSubmit={submit}
         noValidate

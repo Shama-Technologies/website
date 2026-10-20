@@ -61,7 +61,7 @@ export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-line bg-ink pt-20 text-fg">
       <div className="wrap">
-        <div className="grid justify-items-center gap-5 pb-16 text-center">
+        <div className="grid grid-cols-1 justify-items-center gap-5 pb-16 text-center">
           <Pill>For ministries</Pill>
           <h2 className="max-w-[16ch] text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
             Your sermons deserve <span className="accent">a bigger room.</span>

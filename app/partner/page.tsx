@@ -60,7 +60,7 @@ export default function PartnerPage() {
               </>
             }
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PartnershipTypes.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.06}>
                 <div className="group h-full overflow-hidden rounded-3xl border border-line bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-line-2">
@@ -86,8 +86,8 @@ export default function PartnerPage() {
       </section>
 
       <section className="py-24">
-        <div className="wrap grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
-          <Reveal className="grid content-start justify-items-start gap-5 lg:sticky lg:top-28">
+        <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+          <Reveal className="grid grid-cols-1 content-start justify-items-start gap-5 lg:sticky lg:top-28">
             <Pill>Why partner</Pill>
             <h2 className="text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
               Your partnership <span className="accent">goes further than you think.</span>
@@ -118,8 +118,8 @@ export default function PartnerPage() {
         <div className="wrap">
           <Reveal>
             <div className="relative overflow-hidden rounded-[28px] border border-line-2 bg-[radial-gradient(circle_at_85%_0%,rgba(143,134,255,.4),transparent_50%),linear-gradient(140deg,#221E52,#121029_70%)] p-6 md:p-12">
-              <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-center">
-                <div className="grid content-start justify-items-start gap-5">
+              <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-center">
+                <div className="grid grid-cols-1 content-start justify-items-start gap-5">
                   <Pill>Give</Pill>
                   <h2 className="text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
                     Keep the word <span className="accent">free for everyone.</span>

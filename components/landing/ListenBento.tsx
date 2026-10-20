@@ -119,7 +119,7 @@ export default function ListenBento() {
           On the bus, at work, in the quiet of the night. Shama keeps the word close.
         </SectionHead>
 
-        <div className="grid gap-4 md:grid-cols-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
           <Reveal className="md:col-span-4">
             <div className={card}>
               <SearchDemo />

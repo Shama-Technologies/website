@@ -60,7 +60,7 @@ export default function AmbassadorForm() {
 
   return (
     <form ref={form} onSubmit={submit} className="grid gap-5">
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {fields.map((f) => (
           <Field key={f.name} id={`amb-${f.name}`} label={f.label}>
             <input

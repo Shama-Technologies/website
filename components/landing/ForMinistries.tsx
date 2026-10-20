@@ -15,8 +15,8 @@ export default function ForMinistries() {
       <div className="wrap">
         <Reveal>
           <div className="relative overflow-hidden rounded-[28px] border border-line-2 bg-[radial-gradient(circle_at_85%_0%,rgba(143,134,255,.4),transparent_50%),linear-gradient(140deg,#221E52,#121029_70%)] p-6 md:p-12">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
-              <div className="grid content-start justify-items-start gap-5">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
+              <div className="grid grid-cols-1 content-start justify-items-start gap-5">
                 <Pill>Shama Studio · for ministries</Pill>
                 <h2 className="text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
                   Your ministry, <span className="accent">heard everywhere.</span>

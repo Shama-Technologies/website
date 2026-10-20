@@ -20,7 +20,7 @@ export function SectionHead({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="mb-12 grid justify-items-center gap-4 text-center">
+    <div className="mb-12 grid grid-cols-1 justify-items-center gap-4 text-center">
       <Pill>{pill}</Pill>
       <h2 className="max-w-[18ch] text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
         {title}

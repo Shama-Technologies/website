@@ -25,7 +25,7 @@ export default function PageHero({
       )}
       <div className="grid-bg" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[1000px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(108,99,255,0.38),rgba(72,63,178,0.14)_45%,transparent_75%)]" />
-      <div className="wrap relative grid justify-items-center gap-6 text-center">
+      <div className="wrap relative grid grid-cols-1 justify-items-center gap-6 text-center">
         <Pill>{pill}</Pill>
         <h1 className="max-w-[16ch] text-[clamp(40px,6.2vw,76px)] font-semibold leading-[0.98]">
           {title}

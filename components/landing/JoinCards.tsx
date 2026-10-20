@@ -49,7 +49,7 @@ export default function JoinCards() {
             </>
           }
         />
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {cards.map((c, i) => {
             const inner = (
               <>

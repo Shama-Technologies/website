@@ -77,7 +77,7 @@ export default function AboutPage() {
               </>
             }
           />
-          <ol className="grid gap-4 md:grid-cols-3">
+          <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {story.map(([kicker, title, body], i) => (
               <Reveal as="li" key={title} delay={i * 0.1}>
                 <div className="relative grid h-full content-start gap-4 rounded-3xl border border-line bg-white/[0.02] p-6">
@@ -94,7 +94,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-12">
-        <div className="wrap grid gap-4 md:grid-cols-2">
+        <div className="wrap grid grid-cols-1 gap-4 md:grid-cols-2">
           {[
             [
               "Vision",
@@ -130,7 +130,7 @@ export default function AboutPage() {
             Our values shape the Shama culture: who we are, what we do every day, and how we serve
             the diverse streams of the body of Christ.
           </SectionHead>
-          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {values.map(([title, body], i) => (
               <Reveal as="li" key={title} delay={i * 0.06}>
                 <div className="group grid h-full content-between gap-10 rounded-3xl border border-line bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-line-2 hover:bg-brand/10">

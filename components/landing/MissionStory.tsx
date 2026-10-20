@@ -12,8 +12,8 @@ const values = [
 export default function MissionStory() {
   return (
     <section className="relative overflow-hidden py-24">
-      <div className="wrap grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
-        <Reveal className="grid content-start justify-items-start gap-5 lg:sticky lg:top-28">
+      <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+        <Reveal className="grid grid-cols-1 content-start justify-items-start gap-5 lg:sticky lg:top-28">
           <Pill>Why Shama</Pill>
           <h2 className="text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
             Preserving the message, <span className="accent">for this generation and the next.</span>
