@@ -55,7 +55,7 @@ export default function AmbassadorPage() {
               </>
             }
           />
-          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {WhyAmbassador.map((b, i) => (
               <Reveal as="li" key={b.title} delay={(i % 4) * 0.06}>
                 <div className="group grid h-full content-start gap-4 rounded-3xl border border-line bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-line-2 hover:bg-brand/10">
@@ -72,8 +72,8 @@ export default function AmbassadorPage() {
       </section>
 
       <section id="apply" className="scroll-mt-24 py-24">
-        <div className="wrap grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start">
-          <Reveal className="grid content-start justify-items-start gap-5 lg:sticky lg:top-28">
+        <div className="wrap grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start">
+          <Reveal className="grid grid-cols-1 content-start justify-items-start gap-5 lg:sticky lg:top-28">
             <Pill>Who we&apos;re looking for</Pill>
             <h2 className="text-[clamp(30px,4.4vw,52px)] font-semibold leading-[1.05]">
               All you need to <span className="accent">become an ambassador.</span>

@@ -11,7 +11,7 @@ const BARS = Array.from(
 const RING = 94.2;
 
 const card =
-  "absolute z-[2] max-w-[168px] rounded-[14px] border border-line-2 bg-ink-2/90 p-2.5 text-[11px] shadow-[0_20px_40px_-20px_rgba(0,0,0,.8)] backdrop-blur-md motion-safe:animate-bob sm:min-w-[190px] sm:max-w-[220px] sm:px-3.5 sm:py-3 sm:text-xs";
+  "absolute z-[2] max-w-[150px] rounded-[14px] border border-line-2 bg-ink-2/90 p-2.5 text-[11px] shadow-[0_20px_40px_-20px_rgba(0,0,0,.8)] backdrop-blur-md motion-safe:animate-bob sm:min-w-[190px] sm:max-w-[220px] sm:px-3.5 sm:py-3 sm:text-xs";
 const kicker =
   "mb-1.5 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-fg-3";
 
@@ -34,7 +34,7 @@ export default function HeroStage() {
 
   return (
     <div
-      className="relative h-[520px] min-w-0 md:h-[560px]"
+      className="relative h-[480px] min-w-0 sm:h-[520px] md:h-[560px]"
       role="img"
       aria-label="A ministry uploads a sermon, followers are notified, and they listen anywhere, even offline."
     >
@@ -53,7 +53,7 @@ export default function HeroStage() {
         <span className="text-fg-2">Samuel Akinwumi · just uploaded</span>
       </div>
 
-      <div className={`${card} right-0 top-[120px] flex items-center gap-2.5 [animation-delay:-2s] sm:top-[150px]`}>
+      <div className={`${card} right-0 top-[110px] flex items-center gap-2.5 [animation-delay:-2s] sm:top-[150px]`}>
         <svg className="h-7 w-7 flex-none" viewBox="0 0 36 36" aria-hidden="true">
           <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(196,190,255,.2)" strokeWidth="4" />
           <circle cx="18" cy="18" r="15" fill="none" stroke="#31C277" strokeWidth="4" strokeLinecap="round" strokeDasharray={RING} strokeDashoffset={RING * (1 - dl / 100)} transform="rotate(-90 18 18)" />
@@ -67,7 +67,7 @@ export default function HeroStage() {
         </div>
       </div>
 
-      <div className={`${card} bottom-[50px] left-[18px] [animation-delay:-4s]`}>
+      <div className={`${card} bottom-[24px] left-0 sm:bottom-[50px] sm:left-[18px] [animation-delay:-4s]`}>
         <div className={kicker}>
           <i className="h-1.5 w-1.5 rounded-full bg-brand-2 shadow-[0_0_8px_var(--color-brand-2)]" />
           Following
@@ -78,7 +78,7 @@ export default function HeroStage() {
 
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 h-[450px] w-[220px] -translate-x-1/2 -translate-y-1/2 -rotate-[4deg] rounded-[42px] bg-[linear-gradient(160deg,#3A3570,#121029_40%,#0B0A18)] p-2.5 shadow-[0_0_0_1px_rgba(196,190,255,.25),0_40px_80px_-20px_rgba(0,0,0,.8),0_0_120px_-20px_rgba(108,99,255,.6)] sm:h-[510px] sm:w-[250px]"
+        className="absolute left-1/2 top-1/2 h-[400px] w-[196px] -translate-x-1/2 -translate-y-1/2 -rotate-[4deg] rounded-[42px] bg-[linear-gradient(160deg,#3A3570,#121029_40%,#0B0A18)] p-2.5 shadow-[0_0_0_1px_rgba(196,190,255,.25),0_40px_80px_-20px_rgba(0,0,0,.8),0_0_120px_-20px_rgba(108,99,255,.6)] sm:h-[450px] sm:w-[220px] md:h-[510px] md:w-[250px]"
       >
         <div className="relative grid h-full grid-rows-[auto_1fr_auto_auto_auto] gap-3 overflow-hidden rounded-[33px] bg-[linear-gradient(180deg,#221E52_0%,#121029_55%,#0C0B18_100%)] px-4 pb-4 pt-[38px]">
           <div className="absolute left-1/2 top-2.5 h-[22px] w-[82px] -translate-x-1/2 rounded-full bg-[#05040C]" />

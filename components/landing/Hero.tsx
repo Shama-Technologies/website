@@ -20,8 +20,8 @@ export default function Hero() {
     <section className="relative overflow-hidden pb-20 pt-28 md:pt-32">
       <div className="grid-bg" />
       <div className="pointer-events-none absolute left-1/2 top-[58%] h-[700px] w-[1100px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(108,99,255,0.42),rgba(72,63,178,0.18)_45%,transparent_75%)]" />
-      <div className="wrap relative grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
-        <div className="grid min-w-0 content-start justify-items-start gap-[22px]">
+      <div className="wrap relative grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+        <div className="grid grid-cols-1 min-w-0 content-start justify-items-start gap-[22px]">
           <Pill>Coming soon to Android &amp; iOS</Pill>
           <h1 className="text-[clamp(40px,6.2vw,78px)] font-semibold leading-[0.98]">
             Kingdom content, <span className="accent">anytime, anywhere.</span>
@@ -45,7 +45,7 @@ export default function Hero() {
               }
             />
           </div>
-          <div className="flex flex-wrap gap-9 pt-1.5">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 pt-1.5">
             {[
               [5000, "Sermons & songs"],
               [20, "Preachers & artists"],
@@ -54,7 +54,7 @@ export default function Hero() {
                 <b className="block font-display text-[34px] font-semibold tracking-tight">
                   <CountUp to={n as number} suffix="+" />
                 </b>
-                <span className="text-xs uppercase tracking-[0.12em] text-fg-3">{label}</span>
+                <span className="text-[11px] uppercase tracking-[0.1em] text-fg-3 sm:text-xs sm:tracking-[0.12em]">{label}</span>
               </div>
             ))}
           </div>

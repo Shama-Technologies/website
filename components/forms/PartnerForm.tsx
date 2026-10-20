@@ -36,7 +36,7 @@ export default function PartnerForm() {
 
   return (
     <form onSubmit={submit} className="grid gap-5">
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         <Field id="user_name" label="Full name">
           <input id="user_name" name="user_name" type="text" value={form.user_name} onChange={change} placeholder="Your name" autoComplete="name" required className={inputClass} />
         </Field>
