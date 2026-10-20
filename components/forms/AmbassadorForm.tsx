@@ -48,7 +48,7 @@ export default function AmbassadorForm() {
 
     if (sheet.status === "rejected" && email.status === "rejected") {
       console.error("Ambassador application failed", sheet.reason, email.reason);
-      setStatus({ type: "error", message: "Your application didn't send. Please try again, or email technologiesshama@gmail.com." });
+      setStatus({ type: "error", message: "Your application didn't send. Please try again, or email shama@shamaapp.com." });
     } else {
       form.current.reset();
       setStatus({ type: "success", message: "Application received! We'll be in touch by email." });
