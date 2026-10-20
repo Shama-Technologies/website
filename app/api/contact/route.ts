@@ -3,8 +3,16 @@ export const runtime = "nodejs";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { escapeHtml, mailConfig } from "../../../lib/mail";
+import { appendToSheet } from "../../../lib/sheet";
+
+const received = () =>
+  NextResponse.json({ success: true, message: "Message received" }, { status: 200 });
+const failed = () =>
+  NextResponse.json({ success: false, message: "Failed to send email" }, { status: 500 });
 
 export async function POST(req: NextRequest) {
+  // The form succeeds if either the email or the sheet row goes through.
+  let saved: Promise<boolean> = Promise.resolve(false);
   try {
     const formData = await req.json();
     const user_name = String(formData.user_name ?? "").trim();
@@ -29,13 +37,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    saved = appendToSheet("Partners", {
+      Name: user_name,
+      Email: user_email,
+      Phone: phone,
+      Message: message,
+    });
+
     const mail = mailConfig();
     if (!mail) {
       console.error("Email is not configured: set EMAIL_USER and EMAIL_APP_PASSWORD");
-      return NextResponse.json(
-        { success: false, message: "Failed to send email" },
-        { status: 500 }
-      );
+      return (await saved) ? received() : failed();
     }
 
     // Create a transporter
@@ -247,15 +259,10 @@ export async function POST(req: NextRequest) {
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent:", info.messageId);
 
-    return NextResponse.json(
-      { success: true, message: "Email sent successfully" },
-      { status: 200 }
-    );
+    await saved;
+    return received();
   } catch (error) {
     console.error("Error sending email:", error);
-    return NextResponse.json(
-      { success: false, message: "Failed to send email" },
-      { status: 500 }
-    );
+    return (await saved) ? received() : failed();
   }
 }
