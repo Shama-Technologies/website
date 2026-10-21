@@ -13,14 +13,14 @@ export const metadata = {
     description: 'Shama was founded to bridge the gap between God\'s word and His people in the digital age.',
     url: 'https://shamaapp.com/about-us',
     siteName: 'Shama',
-    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Shama: Kingdom content, anytime, anywhere.' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Us | Shama',
     description: 'Shama was founded to bridge the gap between God\'s word and His people in the digital age.',
-    images: ['https://shamaapp.com/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 }
 
