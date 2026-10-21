@@ -15,14 +15,14 @@ export const metadata = {
     description: 'Collaborate with Shama to spread the Gospel. Content partnerships, ministry partnerships, sponsorships and donations available.',
     url: 'https://shamaapp.com/partner',
     siteName: 'Shama',
-    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Shama: Kingdom content, anytime, anywhere.' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Partner With Us | Shama',
     description: 'Collaborate with Shama to spread the Gospel globally.',
-    images: ['https://shamaapp.com/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 }
 

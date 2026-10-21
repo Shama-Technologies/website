@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     description: 'Stream and download sermons, worship music, and podcasts on Shama.',
     url: 'https://shamaapp.com',
     siteName: 'Shama',
-    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Shama: Kingdom content, anytime, anywhere.' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shama | Bringing the Gospel Closer to You',
     description: 'Stream and download sermons, worship music, and podcasts on Shama.',
-    images: ['https://shamaapp.com/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 };
 

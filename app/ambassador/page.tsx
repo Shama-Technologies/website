@@ -14,14 +14,14 @@ export const metadata = {
     description: 'Join the Shama Ambassador Program — exclusive content access, leadership training, networking, and more.',
     url: 'https://shamaapp.com/ambassador',
     siteName: 'Shama',
-    images: [{ url: 'https://shamaapp.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Shama: Kingdom content, anytime, anywhere.' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Become a Shama Ambassador',
     description: 'Join the Shama Ambassador Program and help spread Kingdom content worldwide.',
-    images: ['https://shamaapp.com/og-image.png'],
+    images: ['/og-image.jpg'],
   },
 }
 
