@@ -19,6 +19,7 @@ export const Socials = [
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61590590341673" },
   { name: "X", href: "https://x.com/theshamaapp" },
   { name: "Instagram", href: "https://www.instagram.com/_theshamaapp/" },
+  { name: "TikTok", href: "https://www.tiktok.com/@shamaapp" },
 ];
 
 // Real channels on Shama, shown in the marquee.
